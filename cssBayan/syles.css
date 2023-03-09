@@ -1,3 +1,25 @@
 body {
   margin: 0;
 }
+main {
+  min-height: 100vh;
+  background: #f6f6ed;
+}
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.content {
+  width: 70%;
+  margin: 0 auto;
+}
+.ele-img {
+  width: 10rem;
+  background-image: url(./assets/img/wijs.png);
+  background-size: cover;
+  height: 0;
+  overflow: hidden;
+}
+input:checked + label + .ele-img {
+  height: 10rem;
+}
