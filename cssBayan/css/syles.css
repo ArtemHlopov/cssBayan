@@ -98,7 +98,8 @@ label:active .icon {
   label,
   .label-text,
   .icon,
-  .ele-img {
+  .ele-img,
+  .label-block {
     cursor: pointer;
   }
   .icon {
