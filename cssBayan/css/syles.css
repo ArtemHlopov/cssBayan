@@ -1,18 +1,27 @@
 body {
   margin: 0;
+  background: #f6f6ed;
 }
 main {
   min-height: 100vh;
   background: #f6f6ed;
+  font: 1.2em "Arial", sans-serif;
+  font-weight: bold;
 }
 input {
   display: none;
 }
 label {
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .label-block {
-  margin-bottom: 2%;
+  width: 100%;
+  align-self: flex-start;
+  display: flex;
+  justify-content: space-between;
 }
 .wrapper {
   max-width: 1920px;
@@ -26,7 +35,7 @@ label {
   justify-content: center;
 }
 .accordeon {
-  color: blue;
+  color: #104e8b;
   font-weight: bold;
 }
 
@@ -35,44 +44,64 @@ label {
   padding: 1rem 0;
 }
 .ele-img {
+  width: 50vh;
   background-size: cover;
   height: 0;
-  overflow: hidden;
   transition: 0.5s ease;
 }
 .img1 {
-  background-image: url(../assets/img/bestfriend.PNG);
+  background-image: url("../assets/img/bestfriend.PNG");
 }
 .img2 {
-  background-image: url(../assets/img/jspain.png);
+  background-image: url("../assets/img/jspain.png");
 }
 .img3 {
-  background-image: url(../assets/img/newframework.PNG);
+  background-image: url("../assets/img/newframework.PNG");
 }
 .img4 {
-  background-image: url(../assets/img/worktime.PNG);
+  background-image: url("../assets/img/worktime.PNG");
 }
 .img5 {
-  background-image: url(../assets/img/junior.PNG);
+  background-image: url("../assets/img/junior.PNG");
 }
 input:checked + label {
   color: black;
 }
 input:checked + label .ele-img {
-  height: 14rem;
+  height: 50vh;
 }
-.label-block {
-  display: flex;
-  justify-content: space-between;
-}
+
 .icon {
   display: inline-block;
   height: 1rem;
   width: 1rem;
-  background-image: url(../assets/icons/plus.png);
-  background-size: cover;
+  opacity: 0;
   transition: 0.5s all;
 }
 input:checked + label .icon {
   transform: rotate(45deg);
+}
+
+@media (min-width: 841px) {
+  .accordeon:hover {
+    color: #000000;
+  }
+  .accordeon:hover .icon {
+    opacity: 1;
+  }
+  label:hover .ele-img {
+    height: 50vh;
+  }
+  label:hover .icon {
+    transform: rotate(45deg);
+  }
+  label:active,
+  input:checked + label:active {
+    color: #104e8b;
+    filter: grayscale(30%);
+  }
+  label:active .icon {
+    filter: invert(26%) sepia(25%) saturate(3305%) hue-rotate(185deg)
+      brightness(89%) contrast(97%);
+  }
 }
